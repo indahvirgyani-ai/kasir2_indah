@@ -298,7 +298,7 @@ return [
     |
     */
 
-   'menu' => [
+  'menu' => [
         // Navbar items:
         [
             'type' => 'navbar-search',
@@ -321,13 +321,47 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'Dashboard',
-            'route' => 'dashboard',
-            'icon' => 'far fa-fw fa-file-alt',
+            'text' => 'Jurusan',
+            'url' => 'admin/pages',
+            'icon' => 'far fa-fw fa-file',
+            //'label' => 4,
+            'label_color' => 'success',
         ],
         [
-            'text' => 'Data Master',
+            'text' => 'Jenjang',
+            'url' => 'admin/pages',
+            'icon' => 'far fa-fw fa-file',
+            //'label' => 4,
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Kelas',
+            'url' => 'admin/pages',
+            'icon' => 'far fa-fw fa-file',
+            //'label' => 4,
+            'label_color' => 'success',
+        ],
+        [
+            'text' => 'Siswa',
+            'url' => 'admin/pages',
+            'icon' => 'far fa-fw fa-file',
+            //'label' => 4,
+            'label_color' => 'success',
+        ],
+        ['header' => 'account_settings'],
+        [
+            'text' => 'profile',
             'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'change_password',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'multilevel',
+            'icon' => 'fas fa-fw fa-share',
             'submenu' => [
                 [
                     'text' => 'level_one',
@@ -363,15 +397,21 @@ return [
                 ],
             ],
         ],
+        ['header' => 'labels'],
         [
-            'text' => 'Data Siswa',
-            'icon_color' => 'grey',
-            'route' => 'siswa.index',
+            'text' => 'important',
+            'icon_color' => 'red',
+            'url' => '#',
         ],
         [
-            'text' => 'Data Guru',
-            'icon_color' => 'grey',
-            'route' => 'guru.index',
+            'text' => 'warning',
+            'icon_color' => 'yellow',
+            'url' => '#',
+        ],
+        [
+            'text' => 'information',
+            'icon_color' => 'cyan',
+            'url' => '#',
         ],
     ],
     /*
