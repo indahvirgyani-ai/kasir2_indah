@@ -59,11 +59,10 @@
                     @forelse ($jurusans as $key => $jurusan)
                     <tr>
                         <td>{{ $jurusans->firstItem() + $key }}</td>
-                        <td>{{ $jurusan->nama_siswa }}</td>
-                        <td>{{ $jurusan->nis }}</td>
-                        <td>{{ $jurusan->jurusan }}</td> 
-                        <td>{{ $jurusan->kelas }}</td>   
-                        <td>{{ $jurusan->email }}</td>
+                        <td>{{ $jurusan->nama_jurusan }}</td>
+                        <td>{{ $jurusan->kode_jurusan }}</td>
+                        <td>{{ $jurusan->keterangan }}</td> 
+                        <td>{{ $jurusan->status }}</td>   
                         <td>
                             {{-- Tombol Aksi disinkronkan stylenya (btn-sm, icon only) --}}
                             <a class="btn btn-info btn-sm" href="{{ route('jurusan.show', $jurusan->id) }}" title="Lihat">

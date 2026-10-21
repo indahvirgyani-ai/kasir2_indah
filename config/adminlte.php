@@ -322,7 +322,7 @@ return [
         ],
         [
             'text' => 'Jurusan',
-            'url' => 'admin/pages',
+            'url' => 'jurusan',
             'icon' => 'far fa-fw fa-file',
             //'label' => 4,
             'label_color' => 'success',

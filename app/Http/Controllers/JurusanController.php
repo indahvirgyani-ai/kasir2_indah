@@ -20,7 +20,7 @@ class JurusanController extends Controller
             })
             ->paginate(10); 
 
-        return view('jurusan.index', compact('jurusan'));
+        return view('jurusan.index', compact('jurusans'));
     }
 
     /**
