@@ -329,7 +329,7 @@ return [
         ],
         [
             'text' => 'Jenjang',
-            'url' => 'admin/pages',
+            'url' => '/jenjang',
             'icon' => 'far fa-fw fa-file',
             //'label' => 4,
             'label_color' => 'success',
