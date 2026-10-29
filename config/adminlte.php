@@ -336,14 +336,14 @@ return [
         ],
         [
             'text' => 'Kelas',
-            'url' => 'admin/pages',
+            'url' => 'kelas',
             'icon' => 'far fa-fw fa-file',
             //'label' => 4,
             'label_color' => 'success',
         ],
         [
             'text' => 'Siswa',
-            'url' => 'admin/pages',
+            'url' => 'siswa',
             'icon' => 'far fa-fw fa-file',
             //'label' => 4,
             'label_color' => 'success',
