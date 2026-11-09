@@ -28,7 +28,7 @@ class JenjangController extends Controller
      */
     public function create()
     {
-        //
+        return view('jenjang.create');
     }
 
     /**
@@ -36,7 +36,18 @@ class JenjangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $data = $request->validate([
+            'kode_jenjang' => 'required|string|max:10',
+            'nama_jenjang' => 'required|string|max:100',
+            'keterangan'   => 'nullable|string|max:255',
+            'status'       => 'nullable|string|max:50',
+           ]);
+
+           Jenjang::create($data);
+
+           return redirect()
+                ->route('jenjang.index')
+                ->with('success','Data jenjang berhasil ditambahkan.');
     }
 
     /**
