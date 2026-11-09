@@ -12,7 +12,7 @@ class JenjangController extends Controller
      */
     public function index(Request $request)
     {
-         //Filter search
+        //Filter search
         $jenjangs = Jenjang::query()
             ->when($request->search, function ($query, $search) {
                 $query->where('nama_jenjang', 'like', "%{$search}%")
@@ -36,7 +36,7 @@ class JenjangController extends Controller
      */
     public function store(Request $request)
     {
-         $data = $request->validate([
+        $data = $request->validate([
             'kode_jenjang' => 'required|string|max:10',
             'nama_jenjang' => 'required|string|max:100',
             'keterangan'   => 'nullable|string|max:255',

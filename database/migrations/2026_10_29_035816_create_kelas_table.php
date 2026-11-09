@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kelas');
-            $table->foreignId('jenjang_id')->constrained('jenjang');
+            $table->foreignId('jenjang_id')->constrained('jenjangs');
             $table->foreignId('jurusan_id')->constrained('jurusan');
             $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');
             $table->timestamps();

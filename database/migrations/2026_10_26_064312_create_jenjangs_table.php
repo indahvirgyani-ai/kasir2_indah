@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jenjang', function (Blueprint $table) {
+        Schema::create('jenjangs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_jenjang');
-            $table->string('kode_jenjang')->unique();
-            $table->string('keterangan')->nullable();
+            $table->string('nama_jenjang', 20)->unique();
+            $table->string('kode_jenjang',100)->unique();
+            $table->string('keterangan',255)->nullable();
+            $table->enum('status', ['aktif', 'nonaktif'])->default('aktif');
             $table->timestamps();
         });
     }

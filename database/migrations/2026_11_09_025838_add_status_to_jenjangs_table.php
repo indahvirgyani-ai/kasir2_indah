@@ -9,16 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+   public function up(): void
     {
-        Schema::table('jenjangs', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_jenjang',100)->unique();
-            $table->string('kode_jenjang',20)->unique();
-            $table->string('keterangan',255)->nullable();
-            $table->enum('status',['aktif','nonaktif'])->default('aktif');
-            $table->timestamp();
-        });
+        if (!Schema::hasColumn('jenjangs', 'status')) {
+            Schema::table('jenjangs', function (Blueprint $table) {
+                $table->enum('status', ['aktif', 'nonaktif'])
+                    ->default('aktif');
+            });
+        }
     }
 
     /**

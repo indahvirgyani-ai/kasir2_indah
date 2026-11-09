@@ -6,27 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::table('jurusans', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_jurusan',100)->unique();
-            $table->string('kode_jurusan',20)->unique();
-            $table->string('keterangan',255)->nullable();
-            $table->enum('status',['aktif','nonaktif'])->default('aktf');
-            $table->timestamp();
+   public function up(): void
+{
+    if (!Schema::hasColumn('jurusan', 'status')) {
+        Schema::table('jurusan', function (Blueprint $table) {
+            $table->enum('status', ['aktif', 'nonaktif'])
+                  ->default('aktif');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
+}
     public function down(): void
     {
-        Schema::table('jurusans', function (Blueprint $table) {
+        Schema::table('jurusan', function (Blueprint $table) {
             $table->dropColumn('status');
         });
     }
